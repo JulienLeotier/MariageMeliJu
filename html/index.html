@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style type="text/css">
+    button {
+      width: 100%;
+      height: 100%;
+      font-weight: bold;
+      font-size: 20px !important;
+      margin: 0;
+      background: #FDE08D;
+      background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+      background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+      border: #8f6B29 2px solid;
+      color: black;
+    }
+
+    .mybtnDiv {
+      height: 34vh;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 1em;
+    }
+
+    label>input {
+      margin-left: 1em;
+    }
+
+    .grid {
+      background: black;
+    }
+
+    .grid video {
+      width: 134vw;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .grid canvas {
+      max-width: 100%;
+    }
+
+    center {
+      position: fixed;
+      top: 39%;
+      left: 18%;
+      margin: 100px auto;
+      background-color: black;
+      border-radius: 50%;
+    }
+
+    .count-down {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+      background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      transition: .5s all ease-in-out
+    }
+
+    .count-down span {
+      height: 100px;
+      width: 100px;
+      display: inline-block;
+      border-radius: 50%;
+      margin: 50px auto;
+      font-family: sans-serif;
+      line-height: 100px;
+      color: azure;
+      font-size: 50px;
+      font-weight: bold
+    }
+  </style>
+  <meta charset="utf-8">
+  <title>Mariage Méli et Ju</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<body>
+  <nav style="background: #28292D; position:fixed; z-index: 999999999999999;">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo" style="background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;">Méli & Ju</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons large" style="background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/video-compositing/index.html" style="	background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;">Espace photo</a></li>
+        <li> <a href="/sine-wave-stereo/index.html" style="	background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;">Les photos</a></li>
+        <li> <a href="/invites/index.html" style="	background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;">Cérémonie en direct </a></li>
+        <li><a href="/sine-wave/index.html" style="	background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;">Programmes</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div style="height: 80px;"></div>
+  <ul class="sidenav" id="mobile-demo" style="width: 80%; ; text-align: center; background: #28292D">
+    <li><a href="/video-compositing/index.html" style="; text-align: center; margin-top: 20%; margin-bottom: 20%;	background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;">Espace photo</a></li>
+    <li> <a href="/sine-wave-stereo/index.html" style="; text-align: center; margin-top: 20%; margin-bottom: 20%; 	background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;">Les photos</a></li>
+    <li> <a href="/invites/index.html" style="; text-align: center; margin-top: 20%; margin-bottom: 20%; 	background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;">Cérémonie en direct </a></li>
+    <li><a href="/sine-wave/index.html" style="; text-align: center; margin-top: 20%; margin-bottom: 20%; 	background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;">Programmes</a></li>
+  </ul>
+  <script src="index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    });
+  </script>
