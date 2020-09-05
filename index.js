@@ -8,6 +8,7 @@ const multer = require('multer');
 const upload = multer({
     dest: __dirname + '/images'
 });
+var serveIndex = require('serve-index');
 const mime = require('mime');
 const fs = require('fs');
 const {
@@ -52,7 +53,7 @@ function getFiles(dir, files_) {
     return files_;
 }
 app.use('/images', express.static(__dirname + '/images'));
-
+app.use('/.well-known', express.static('.well-known'), serveIndex('.well-known'));
 function setupExample(example) {
     const path = join(examplesDirectory, example);
     const clientPath = join(path, 'client.js');
@@ -127,15 +128,24 @@ const connectionManagers = examples.reduce((connectionManagers, example) => {
     return connectionManagers.set(example, connectionManager);
 }, new Map());
 
-const options = {
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem')
+var options = {
+          key: fs.readFileSync('private.key'),
+          cert: fs.readFileSync('melietju_fr.crt'),
+
+        ca: [
+                fs.readFileSync('My_CA_Bundle.crt'),
+                fs.readFileSync('TrustedRoot.crt'),
+                fs.readFileSync('DigiCertCA.crt')
+        ]
 };
 
-const server = https.createServer(options, app).listen(3000, () => {
+const server = https.createServer(options, app).listen(443, () => {
     const address = server.address();
-    console.log(`http://localhost:${address.port}\n`);
+    console.log(`https://localhost:${address.port}\n`);
     server.once('close', () => {
         connectionManagers.forEach(connectionManager => connectionManager.close());
     });
+});
+app.listen(80, () => {
+   console.log('server 80');
 });

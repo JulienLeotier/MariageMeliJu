@@ -64,11 +64,6 @@ function beforeOffer(peerConnection) {
         hue = ++hue % 360;
         const [r, g, b] = hsv.rgb([hue, 100, 100]);
         const thisTime = performance.now();
-
-        //     background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
-        // background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
-        // -webkit-background-clip: text;
-        // -webkit-text-fill-color: transparent;
         context.font = '40px Sans-serif';
         context.strokeStyle = 'black';
         context.lineWidth = 1;
@@ -83,7 +78,6 @@ function beforeOffer(peerConnection) {
         context.strokeText('Mélissa et Julien \n26/09/2020', 0, 0);
         context.fillText('Mélissa et Julien \n26/09/2020', 0, 0);
         context.restore();
-
         const rgbaFrame = context.getImageData(0, 0, width, height);
         const i420Frame = {
             width,
